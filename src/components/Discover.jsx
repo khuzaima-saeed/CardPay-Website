@@ -106,7 +106,7 @@ export function Discover() {
                         </h1>
                     </div>
                       <p class="mt-6 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
-                      In the bustling corridors of LUMS, a visionary group of students dreamed of a better way to pay. Fueled by innovation, they created CardPay—a digital payment solution for all. Even where banks were scarce, CardPay offered seamless transactions, replacing cumbersome cash with ease. It captured hearts and minds, transforming the university experience. Today, CardPay stands as a testament to youthful ingenuity, reshaping payments and offering a glimpse into a brighter, cashless future. Join the revolution and discover CardPay's boundless possibilities! 💳🎓🌟🚀
+                      In the bustling corridors of LUMS, a visionary group of students dreamed of a better way to pay. Fueled by innovation, they created CardPay—a digital payment solution for all. Even where banks were scarce, CardPay offered seamless transactions, replacing cumbersome cash with ease. It captured hearts and minds, transforming the university experience. Today, CardPay stands as a testament to youthful ingenuity, reshaping payments and offering a glimpse into a brighter, cashless future. Join the revolution and discover CardPay&apos;s boundless possibilities! 💳🎓🌟🚀
                       </p>
                     <a href="#"
                         class="px-4 py-3 text-gray-50 transition-all transform bg-purple-400 rounded-[80px] hover:bg-purple-500 dark:hover:text-gray-100 dark:text-gray-100 ">

@@ -75,7 +75,7 @@ export function CallToAction() {
 
       As word of CardPay spread like wildfire, it captured the hearts and minds of students and businesses alike. With a simple swipe or tap, transactions were executed with unparalleled ease, transforming the university experience for all who embraced its innovative approach.
 
-      Today, CardPay stands tall as a testament to the power of youthful ingenuity. It has reshaped the landscape of payments, offering a glimpse into a future where transactions are smoother, life is simpler, and opportunities abound. Join us in embracing the cashless revolution and discover the boundless possibilities of CardPay—the future of digital payments is here, and it's brighter than ever before! 💳🎓🌟🚀
+      Today, CardPay stands tall as a testament to the power of youthful ingenuity. It has reshaped the landscape of payments, offering a glimpse into a future where transactions are smoother, life is simpler, and opportunities abound. Join us in embracing the cashless revolution and discover the boundless possibilities of CardPay—the future of digital payments is here, and it&apos;s brighter than ever before! 💳🎓🌟🚀
       </p>
 
     </div>
