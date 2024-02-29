@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import Video from 'next-video';
 import CardPayVideo from '/videos/cardpay-video.mp4';
-import Layout from '@/components/Layout';
+import {Layout} from './Layout';
 
 export function CallToAction() {
 
