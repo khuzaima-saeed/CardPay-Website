@@ -1,24 +1,10 @@
 import { useId } from 'react'
 import Image from 'next/image'
-import clsx from 'clsx'
 import MockUp from '../images/mockup.png';
-
-import { AppDemo } from '@/components/AppDemo'
-import { AppStoreLink } from '@/components/AppStoreLink'
-import { PlayStoreLink } from '@/components/PlayStoreLink'
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-
-import logoBunker from '@/images/partners/bunkers.png'
-import logoChopChop from '@/images/partners/chopChop.png'
-import logoFinja from '@/images/partners/Finja.png'
-import logoFrooti from '@/images/partners/Frooti.png'
-import logoJammin from '@/images/partners/jamminJava.png'
-import logoLUMS from '@/images/partners/LUMS.png'
-import logoMeezan from '@/images/partners/meezan.png'
-import logoPaypro from '@/images/partners/paypro.png'
-import GooglePlayIcon from '@/images/google-play.svg'
+import GooglePlayBadge from '@/images/google-play-badge.png'
 import AppleStoreIcon from '@/images/apple-store-icon.svg'
+import Link from 'next/link';
 
 
 function BackgroundIllustration(props) {
@@ -96,11 +82,11 @@ function BackgroundIllustration(props) {
 
 export function Hero() {
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
+    <div className="overflow-hidden lg:pb-32 xl:pb-36">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl lg:text-6xl font-medium tracking-tight text-gray-900 font-medium text-center lg:text-left">
+            <h1 className="text-4xl lg:text-4xl font-medium tracking-tight text-gray-900 font-medium text-center lg:text-left">
             Cash Miss Karao, Payment Sirf CardPay!
             </h1>
             <p className="mt-6 text-lg text-gray-700 lg:w-3/4 text-center lg:text-left">
@@ -108,42 +94,20 @@ export function Hero() {
             </p>
             <br />
 
-            
-
-            {/* <div className="flex flex-col mt-8 lg:mt-12">
-              <div className='items-stretch'>
-                <p className="mt-0 mb-2 text-violet-500 font-semibold">
-                  Download the app now!
-                </p>
-              </div>
-              <br/>
-              <div className="flex items-center">
-                <Image src={GooglePlayIcon} alt="logo" className="w-40 h-10 p-0 m-0" />
-                <Image src={AppleStoreIcon} alt="logo" className="w-40 h-10 p-0 m-0" />
-              </div>
-            </div> */}
-
-
-
-            {/* <div className='flex flex-col gap-y-1'>
-              <div className='text-violet-500 font-semibold'>
-              Download the app now! text center on mobile and justify center icons on mobile
-              </div>
-
-              <div className='flex gap-x-1'>
-                <Image src={GooglePlayIcon} alt="logo"  />
-                <Image src={AppleStoreIcon} alt="logo" />
-              </div>
-            </div> */}
-
             <div className='flex flex-col gap-y-2'>
               <div className='text-violet-500 font-semibold text-center lg:text-left'>
                 Download the app now!
               </div>
 
-              <div className='flex justify-center lg:justify-start gap-x-1'>
-                <Image src={GooglePlayIcon} alt="Google Play" />
-                <Image src={AppleStoreIcon} alt="Apple Store" />
+              <div className='flex justify-center lg:justify-start'>
+                <div className='flex justify-center items-center'>
+                  <Link href="https://apps.apple.com/pk/app/cardpay/id1644127078">
+                    <Image src={AppleStoreIcon} alt="Apple Store"/>
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=io.payment.cardpay">
+                    <Image src={GooglePlayBadge} alt="Google Play" width={150}/>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -161,8 +125,8 @@ export function Hero() {
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
-            <div className="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
-                <Image src={MockUp}  alt="logo" className='mx-auto max-w-[366px]" priority' />
+            <div className="h-[448px] [mask-image:linear-gradient(to_bottom,white_60%,transparent)]">
+                <Image src={MockUp}  alt="logo" className='mx-auto priority h-100 w-100' width={500}/>
             </div>
           </div>
         </div>

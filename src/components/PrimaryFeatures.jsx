@@ -10,39 +10,30 @@ import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-import {
-  DiageoLogo,
-  LaravelLogo,
-  MirageLogo,
-  ReversableLogo,
-  StatamicLogo,
-  StaticKitLogo,
-  TransistorLogo,
-  TupleLogo,
-} from '@/components/StockLogos'
-
-const MotionAppScreenHeader = motion(AppScreen.Header)
-const MotionAppScreenBody = motion(AppScreen.Body)
+import MockUp from '@/images/cardpay.jpeg';
+import Food from '@/images/food.jpeg';
+import Events from '@/images/events.jpeg';
+import Image from 'next/image'
 
 const features = [
   {
-    name: 'Personal',
+    name: 'POS Payments',
     description:
-      'Experience unparalleled convenience with our mobile app\'s versatile features. Seamlessly transfer funds, settle bills, and make purchases effortlessly. Explore a world of possibilities with event ticket purchases and access to a diverse range of restaurant partners. Transform everyday tasks into extraordinary experiences, all at your fingertips.',
+      'Experience unparalleled convenience with our mobile app\'s versatile transfer method. Seamlessly transfer funds, settle bills, and make purchases effortlessly. Explore a world of possibilities with event ticket purchases and access to a diverse range of restaurant partners. Transform everyday tasks into extraordinary experiences, all at your fingertips.',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: 'Business',
+    name: 'Food Delivery',
     description:
-      'Elevate your business game with our tailored solutions. Say goodbye to complicated setups – our platform offers easy deployment and seamless integration with ERP solutions. From planning to execution, our end-to-end event management ensures flawless experiences. Dive into a world of financial flexibility, where customization meets convenience. And that\'s not all – showcase your products directly on our app to reach a broader audience and boost sales. Join us today and watch your business soar to new heights!',
+      'Elevate your food-ordering game with our tailored solution. Say goodbye to complicated methods – our platform offers easy ordering and seamless payment solutions. List your restaurant with us and dive into a world of financial flexibility, where customization meets convenience. Showcase your products directly on our app to reach a broader audience and boost sales. Join us today and watch your business soar to new heights!',
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: 'Industry',
+    name: 'Events',
     description:
-    'Unlock the potential of diverse industries with our versatile platform. Whether you\'re in retail, hospitality, healthcare, or beyond, our solutions are tailored to meet your unique needs. From small businesses to large enterprises, we cater to a wide range of industries, ensuring that each sector can benefit from our innovative tools and services. Join the ranks of satisfied clients across sectors such as retail, hospitality, healthcare, entertainment, education, financial services, real estate, manufacturing, and many more! Wherever your industry lies, we\'re here to empower your success.',
+    'Unlock the potential of event ticekting with our versatile platform. From small businesses to large enterprises, we cater to a wide range of events, ensuring that each sector can benefit from our innovative tools and services. With a seemless and smooth ticketing process, get your hands on the best tickets the earliest and quickest. Ticketing is now just a click away!',
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },
@@ -174,42 +165,8 @@ const bodyAnimation = {
 
 function InviteScreen(props) {
   return (
-    // <AppScreen className="w-full">
-    //   <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-    //     <AppScreen.Title>Invite people</AppScreen.Title>
-    //     <AppScreen.Subtitle>
-    //       Get tips <span className="text-white">5s sooner</span> for every
-    //       invite.
-    //     </AppScreen.Subtitle>
-    //   </MotionAppScreenHeader>
-    //   <MotionAppScreenBody
-    //     {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
-    //   >
-    //     <div className="px-4 py-6">
-    //       <div className="space-y-6">
-    //         {[
-    //           { label: 'Full name', value: 'Albert H. Wiggin' },
-    //           { label: 'Email address', value: 'awiggin@chase.com' },
-    //         ].map((field) => (
-    //           <div key={field.label}>
-    //             <div className="text-sm text-gray-500">{field.label}</div>
-    //             <div className="mt-2 border-b border-gray-200 pb-2 text-sm text-gray-900">
-    //               {field.value}
-    //             </div>
-    //           </div>
-    //         ))}
-    //       </div>
-    //       <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-    //         Invite person
-    //       </div>
-    //     </div>
-    //   </MotionAppScreenBody>
-    // </AppScreen>
     <AppScreen>
-      <div className='text-white'>
-        hello
-      </div>
-    
+      <Image src={MockUp} alt="" className='h-full w-full'/>
     </AppScreen>
   )
 }
@@ -217,101 +174,7 @@ function InviteScreen(props) {
 function StocksScreen(props) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
-        <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody
-        {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
-      >
-        <div className="divide-y divide-gray-100">
-          {[
-            {
-              name: 'Laravel',
-              price: '4,098.01',
-              change: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
-            },
-            {
-              name: 'Tuple',
-              price: '5,451.10',
-              change: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
-            },
-            {
-              name: 'Transistor',
-              price: '4,098.41',
-              change: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
-            },
-            {
-              name: 'Diageo',
-              price: '250.65',
-              change: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
-            },
-            {
-              name: 'StaticKit',
-              price: '250.65',
-              change: '-3.38%',
-              color: '#2A3034',
-              logo: StaticKitLogo,
-            },
-            {
-              name: 'Statamic',
-              price: '5,040.85',
-              change: '-3.11%',
-              color: '#0EA5E9',
-              logo: StatamicLogo,
-            },
-            {
-              name: 'Mirage',
-              price: '140.44',
-              change: '+9.09%',
-              color: '#16A34A',
-              logo: MirageLogo,
-            },
-            {
-              name: 'Reversable',
-              price: '550.60',
-              change: '-1.25%',
-              color: '#8D8D8D',
-              logo: ReversableLogo,
-            },
-          ].map((stock) => (
-            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
-              <div
-                className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
-              >
-                <stock.logo className="h-10 w-10" />
-              </div>
-              <div className="flex-auto text-sm text-gray-900">
-                {stock.name}
-              </div>
-              <div className="flex-none text-right">
-                <div className="text-sm font-medium text-gray-900">
-                  {stock.price}
-                </div>
-                <div
-                  className={clsx(
-                    'text-xs leading-5',
-                    stock.change.startsWith('+')
-                      ? 'text-cyan-500'
-                      : 'text-gray-500',
-                  )}
-                >
-                  {stock.change}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </MotionAppScreenBody>
+      <Image src={Food} alt="" className='h-full w-full'/>
     </AppScreen>
   )
 }
@@ -319,54 +182,7 @@ function StocksScreen(props) {
 function InvestScreen(props) {
   return (
     <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
-        <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody
-        {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
-      >
-        <div className="px-4 py-6">
-          <div className="space-y-4">
-            {[
-              { label: 'Number of shares', value: '100' },
-              {
-                label: 'Current market price',
-                value: (
-                  <div className="flex">
-                    $34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-                      <path
-                        d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                ),
-              },
-              { label: 'Estimated cost', value: '$3,428.00' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex justify-between border-b border-gray-100 pb-4"
-              >
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="text-sm font-semibold text-gray-900">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-            <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
-            </div>
-          </div>
-        </div>
-      </MotionAppScreenBody>
+      <Image src={Events} alt="" className='h-full w-full'/>
     </AppScreen>
   )
 }
@@ -399,7 +215,7 @@ function FeaturesDesktop() {
   return (
     <Tab.Group
       as="div"
-      className="grid grid-cols-12 items-center gap-8 lg:gap-16 xl:gap-24"
+      className="grid grid-cols-12  gap-8 lg:gap-16 xl:gap-24"
       selectedIndex={selectedIndex}
       onChange={onChange}
       vertical
@@ -418,7 +234,6 @@ function FeaturesDesktop() {
               />
             )}
             <div className="relative z-10 p-8">
-              <feature.icon className="h-8 w-8" />
               <h3 className="mt-6 text-lg font-semibold text-white">
                 <Tab className="text-left ui-not-focus-visible:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
@@ -436,7 +251,7 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#A020F0" className="animate-spin-slower" />
         </div>
-        {/* <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -458,7 +273,7 @@ function FeaturesDesktop() {
               )}
             </AnimatePresence>
           </Tab.Panels>
-        </PhoneFrame> */}
+        </PhoneFrame>
       </div>
     </Tab.Group>
   )
@@ -561,16 +376,13 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for investing all your money"
-      className="bg-gray-900 py-20 sm:py-32"
+      className="bg-gray-900 py-10"
     >
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            This is inside Primary Features.jsx
+            Exclusive CardPay Features
           </h2>
-          <p className="mt-2 text-lg text-gray-400">
-            This too
-          </p>
         </div>
       </Container>
 
