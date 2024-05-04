@@ -12,10 +12,10 @@ const inter = Inter({
 export const metadata = {
   title: {
     template: '%s - Pocket',
-    default: 'Pocket - Invest at the perfect time.',
+    default: 'CardPay - Payments made easy',
   },
   description:
-    'By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses.',
+    '',
 }
 
 export default function RootLayout({ children }) {
