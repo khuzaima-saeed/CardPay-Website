@@ -5,12 +5,14 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import {SecondSection} from '@/components/Section'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <PrimaryFeatures />
+      <SecondSection />
+      {/* <PrimaryFeatures /> */}
       {/* <CallToAction /> */}
       {/* <Pricing /> */}
       <Faqs />

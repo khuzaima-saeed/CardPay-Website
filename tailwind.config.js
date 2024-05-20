@@ -1,5 +1,7 @@
 const formsPlugin = require('@tailwindcss/forms')
 const headlessuiPlugin = require('@headlessui/tailwindcss')
+const animated = require('tailwindcss-animated')
+const aspectRatio = require('@tailwindcss/aspect-ratio')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -65,5 +67,5 @@ module.exports = {
       },
     },
   },
-  plugins: [formsPlugin, headlessuiPlugin],
+  plugins: [formsPlugin, headlessuiPlugin, animated, aspectRatio],
 }

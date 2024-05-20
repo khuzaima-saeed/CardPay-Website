@@ -11,11 +11,11 @@ const inter = Inter({
 
 export const metadata = {
   title: {
-    template: '%s - Pocket',
+    template: '%s - CardPay',
     default: 'CardPay - Payments made easy',
   },
   description:
-    '',
+    'First & Forever Wallet for Students.'
 }
 
 export default function RootLayout({ children }) {

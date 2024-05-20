@@ -11,8 +11,8 @@ export function Logomark(props) {
 export function Logo(props) {
   return (
     <div className='flex space-x-1'>
-      <Image src={LogoImage}  alt="logo" width={32} height={32} />
-      <span className='text-xl'>CardPay</span>
+      <Image src={LogoImage}  alt="logo" width={32} height={32} className='text-gradient' />
+      <span className='text-3xl mr-2 font-bold'>CardPay</span>
     </div>
   )
 }
