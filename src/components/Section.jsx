@@ -22,6 +22,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -90,7 +91,7 @@ export  function SecondSection() {
                     </p>
                     <div className="mt-6">
                       <a
-                        href="#"
+                        href="/campus"
                         className="inline-flex rounded-md border border-transparent bg-gradient-to-r from-teal-500 to-cyan-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-teal-700 hover:to-cyan-700"
                       >
                         Learn more

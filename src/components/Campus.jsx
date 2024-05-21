@@ -1,7 +1,12 @@
+"use client"
+import { useState, useEffect } from 'react'
 import {
     CheckIcon,
     FaceSmileIcon
 } from '@heroicons/react/24/outline'
+import { UserStatsCampuses } from './UserStatsForCampuses'
+import YouTube from "react-youtube";
+import CTACampus from './CTACampus';
 
 const tiers = [
     {
@@ -68,11 +73,11 @@ const blogPosts = [
         href: '#',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
-        category: { name: 'QR', href: '#' },
+        category: { name: 'Features', href: '#' },
         imageUrl:
             'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+            'Create cashless instant QR payments with CardPay at all the eateires within your campus and outside!',
         author: {
             name: 'Roel Aufderehar',
             imageUrl:
@@ -91,7 +96,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+            'An all-in-one portal for all societies and clubs to publish their events offering greater traction, transparency and cashless ticketing.',
         author: {
             name: 'Brenna Goyette',
             imageUrl:
@@ -110,7 +115,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+            'Say goodbye to your fees and fine collection hassle! CardPay provides a complete school management system to streamline your fees collection.',
         author: {
             name: 'Daniela Metz',
             imageUrl:
@@ -121,7 +126,7 @@ const blogPosts = [
     },
     {
         id: 4,
-        title: 'Fund Raising',
+        title: 'Food Ordering',
         href: '#',
         date: 'Jan 18, 2020',
         datetime: '2020-01-18',
@@ -129,7 +134,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+            'Allow online food ordering services from your favorite eateries anytime, anywhere. More like an internal foodpanda for your campus!',
     },
     {
         id: 5,
@@ -141,7 +146,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+            'Get insights into student buying habits and profiles with our state of the art data and insights feature',
     },
     {
         id: 6,
@@ -153,12 +158,20 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+            'Equip your students with financial literacy program co-designed using the State Bank Financial Literacy program objectives embedded within the CardPay app.'
     },
 ]
 
+const opts = {
+    height: "300",
+    width: "600",
+    playerVars: {
+        autoplay: 0,
+    },
+};
+
 const TierCard = ({ tier, tierIdx, isLast }) => (
-    <div className="flex justify-center items-center my-4">
+    <div className="flex justify-center items-center my-4" key={tier.id}>
         <div
             className={classNames(
                 tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-white/60 sm:mx-8 lg:mx-0',
@@ -206,7 +219,7 @@ const TierCard = ({ tier, tierIdx, isLast }) => (
                     <li key={feature} className="flex gap-x-3">
                         <span
                             className={classNames(
-                                'h-6 w-5 flex-none'
+                                'h-6 w-5 flex-none text-xl',
                             )}
                             aria-hidden="true"
                         >           {feature.icon}
@@ -237,17 +250,31 @@ const TierCard = ({ tier, tierIdx, isLast }) => (
 );
 
 export function Campus() {
+    const FeaturesList = ["QR Payments", "Events and Ticketing", "Fee Collection", "Fund Raising", "Data Analytics", "Financial Literacy"];
+    const [currentText, setCurrentText] = useState(0);
+    const [fade, setFade] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(false);
+            setTimeout(() => {
+                setCurrentText((prev) => (prev + 1) % FeaturesList.length);
+                setFade(true);
+            }, 500); // Match the duration of the fade-out animation
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="bg-white">
             <div className="relative overflow-hidden">
-
                 <main>
-
                     {/* Testimonial section */}
-                    <div className="bg-gradient-to-r from-teal-500 to-cyan-600 pb-16 lg:relative lg:z-10 lg:pb-0">
+                    <div className="pb-16 lg:relative lg:z-10 lg:pb-0">
                         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
                             <div className="relative lg:-my-8">
-                                <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />
+                                <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 lg:hidden" />
                                 <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:h-full lg:p-0">
                                     <div className="aspect-h-6 aspect-w-10 overflow-hidden rounded-xl shadow-xl sm:aspect-h-7 sm:aspect-w-16 lg:aspect-none lg:h-full">
                                         <img
@@ -260,28 +287,20 @@ export function Campus() {
                             </div>
                             <div className="mt-12 lg:col-span-2 lg:m-0 lg:pl-8">
                                 <div className="mx-auto max-w-md px-6 sm:max-w-2xl lg:max-w-none lg:px-0 lg:py-20">
-                                    <blockquote>
-                                        <div>
-                                            <svg
-                                                className="h-12 w-12 text-white opacity-25"
-                                                fill="currentColor"
-                                                viewBox="0 0 32 32"
-                                                aria-hidden="true"
-                                            >
-                                                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                                            </svg>
-                                            <p className="mt-6 text-2xl font-medium text-white">
-                                                CARDPAY for Cashless Campuses
+                                   
+                                        <div className="relative z-10">
+                                            <p className="mt-6 text-3xl font-bold text-gray-900">
+                                                Create Your Campus Cash Free with CardPay's  <br />
+                                                <span className={`text-gradient text-4xl transition-opacity ease-in duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === FeaturesList.length - 1 ? 'font-bold' : ''}`}>{FeaturesList[currentText]}</span>
                                             </p>
                                         </div>
-                                    </blockquote>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Blog section */}
-                    <div className="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
+                    <div className="relative py-16 sm:py-24 lg:py-32">
                         <div className="relative">
                             <div className="mx-auto max-w-md px-6 text-center sm:max-w-3xl lg:max-w-7xl lg:px-8">
                                 <h2 className="text-4xl font-semibold text-cyan-600">Features that make your campus cashless</h2>
@@ -294,11 +313,6 @@ export function Campus() {
                                         </div>
                                         <div className="flex flex-1 flex-col justify-between bg-white p-6">
                                             <div className="flex-1">
-                                                <p className="text-sm font-medium text-cyan-600">
-                                                    <a href={post.category.href} className="hover:underline">
-                                                        {post.category.name}
-                                                    </a>
-                                                </p>
                                                 <a href={post.href} className="mt-2 block">
                                                     <p className="text-xl font-semibold text-gray-900">{post.title}</p>
                                                     <p className="mt-3 text-base text-gray-500">{post.preview}</p>
@@ -323,6 +337,44 @@ export function Campus() {
 
                         </div>
                     </div>
+
+                    <UserStatsCampuses />
+                    <section className="flex items-center py-10 xl:h-screen font-poppins dark:bg-gray-800 ">
+                        <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
+                            <div className="flex flex-wrap ">
+                                <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
+                                    <div className="relative">
+                                        <div className="relative z-40 w-full lg:rounded-tr-[80px] lg:rounded-bl-[80px]  overflow-hidden">
+                                            <YouTube videoId="8tGGE1hKbpw" opts={opts} className='w-200 h-500' />
+                                        </div>
+                                        <div
+                                            className="absolute z-10 hidden w-full h-full bg-cyan-400 rounded-bl-[80px] rounded -bottom-6 right-6 lg:block">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
+                                    <div className="relative">
+                                        <h1
+                                            className="absolute -top-20 left-0 text-[20px] lg:text-[100px] text-cyan-900 font-bold  dark:text-gray-200 opacity-5 md:block hidden">
+                                            CARDPAY
+                                        </h1>
+                                        <h1 className="pl-2 text-3xl font-bold border-l-8 border-purple-400 md:text-5xl dark:text-white">
+                                            Hear From Other Campuses/Society
+                                        </h1>
+                                    </div>
+                                    <p className="mt-6 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
+                                        In the bustling corridors of LUMS, a visionary group of students dreamed of a better way to pay. Fueled by innovation, they created CardPay—a digital payment solution for all. Even where banks were scarce, CardPay offered seamless transactions, replacing cumbersome cash with ease. It captured hearts and minds, transforming the university experience. Today, CardPay stands as a testament to youthful ingenuity, reshaping payments and offering a glimpse into a brighter, cashless future. Join the revolution and discover CardPay&apos;s boundless possibilities! 💳🎓🌟🚀
+                                    </p>
+                                    <a href="/"
+                                        className="px-4 py-3 text-gray-50 transition-all transform bg-cyan-400 rounded-[80px] hover:bg-cyan-500 dark:hover:text-gray-100 dark:text-gray-100 ">
+                                        Get the CardPay Experience Today! 💳📲
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <CTACampus />
+
 
                 </main>
 
