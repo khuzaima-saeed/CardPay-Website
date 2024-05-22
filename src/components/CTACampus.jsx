@@ -11,7 +11,8 @@ export default function CTACampus() {
                 <div className="aspect-h-6 aspect-w-10 sm:aspect-h-1 sm:aspect-w-2 lg:aspect-w-1">
                   <img
                     className="rounded-3xl object-cover object-center shadow-2xl"
-                    src="https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
+                    
+                    src="https://i.ibb.co/zrR9L4X/FW.png"
                     alt=""
                   />
                 </div>
@@ -70,13 +71,13 @@ export default function CTACampus() {
                   Stay Ahead!
                 </h2>
                 <p className="text-lg text-white">
-                  Creat Your Camous Cashless with CardPay. We offer a wide range of services to help you manage your campus finances.
+                Get started with CardPay today to create a truly cashless campus and empower students with financial wellness
                 </p>
                 <a
                   className="block w-full rounded-md border border-transparent bg-white px-5 py-3 text-center text-base font-medium text-cyan-700 shadow-md hover:bg-gray-50 sm:inline-block sm:w-auto"
                   href="#"
                 >
-                  Get Started
+                  Connect with us
                 </a>
               </div>
             </div>

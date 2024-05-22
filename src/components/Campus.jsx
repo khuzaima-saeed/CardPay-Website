@@ -7,6 +7,7 @@ import {
 import { UserStatsCampuses } from './UserStatsForCampuses'
 import YouTube from "react-youtube";
 import CTACampus from './CTACampus';
+import QR from '../images/QR.png';
 
 const tiers = [
     {
@@ -94,7 +95,8 @@ const blogPosts = [
         datetime: '2020-03-16',
         category: { name: 'Features', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+        
+            'https://i.ibb.co/F7wTdBP/QR.png',
         preview:
             'Create cashless instant QR payments with CardPay at all the eateires within your campus and outside!',
     },
@@ -106,7 +108,7 @@ const blogPosts = [
         datetime: '2020-03-10',
         category: { name: 'Video', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+            'https://i.ibb.co/1TJ1SFg/Event.png',
         preview:
             'An all-in-one portal for all societies and clubs to publish their events offering greater traction, transparency and cashless ticketing.'
     },
@@ -118,7 +120,7 @@ const blogPosts = [
         datetime: '2020-02-12',
         category: { name: 'Case Study', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+            'https://i.ibb.co/vzpqJf0/Fee.png',
         preview:
             'Say goodbye to your fees and fine collection hassle! CardPay provides a complete school management system to streamline your fees collection.'
     },
@@ -130,7 +132,7 @@ const blogPosts = [
         datetime: '2020-01-18',
         category: { name: 'Article', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
+            'https://i.ibb.co/4ZcfRZT/Food.png',
         preview:
             'Allow online food ordering services from your favorite eateries anytime, anywhere. More like an internal foodpanda for your campus!',
     },
@@ -142,7 +144,7 @@ const blogPosts = [
         datetime: '2020-01-18',
         category: { name: 'Article', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
+            'https://i.ibb.co/wMywVXp/Data.png',
         preview:
             'Get insights into student buying habits and profiles with our state of the art data and insights feature',
     },
@@ -154,7 +156,7 @@ const blogPosts = [
         datetime: '2020-01-18',
         category: { name: 'Article', href: '#' },
         imageUrl:
-            'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
+            'https://i.ibb.co/6rRMmyG/FL.png',
         preview:
             'Equip your students with financial literacy program co-designed using the State Bank Financial Literacy program objectives embedded within the CardPay app.'
     },
@@ -203,12 +205,12 @@ const TierCard = ({ tier, tierIdx, isLast }) => (
                     <li key={feature} className="flex gap-x-3">
                         <span
                             className={classNames(
-                                'h-6 w-5 flex-none text-xl',
+                                'h-8 w-8 flex-none text-4xl flex items-center justify-center',
                             )}
                             aria-hidden="true"
                         >           {feature.icon}
                         </span>
-                        <span className={`${tier.featured ? 'text-cyan-300' : 'text-gray-900'} text-sm`}>
+                        <span className={`${tier.featured ? 'text-cyan-300' : 'text-gray-900'} text-xl font-semibold`}>
                             {feature.name} <br/> <span className={`${tier.featured ? 'text-cyan-500' : 'text-gray-600'} text-sm`}>
                         {feature.detail}</span>
                         </span>
@@ -266,7 +268,7 @@ export function Campus() {
                                    
                                         <div className="relative z-10">
                                             <p className="mt-6 text-3xl font-bold text-gray-900">
-                                                Create Your Campus Cash Free with CardPay&apos;s
+                                                Create Your Campus Cash Free with CardPay&apos;s <br/>
                                                 <span className={`text-gradient text-4xl transition-opacity ease-in duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === FeaturesList.length - 1 ? 'font-bold' : ''}`}>{FeaturesList[currentText]}</span>
                                             </p>
                                         </div>
@@ -285,7 +287,7 @@ export function Campus() {
                                 {blogPosts.map((post) => (
                                     <div key={post.id} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
                                         <div className="flex-shrink-0">
-                                            <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
+                                            <img className="h-96 w-full object-cover" src={post.imageUrl} alt="" />
                                         </div>
                                         <div className="flex flex-1 flex-col justify-between bg-white p-6">
                                             <div className="flex-1">
@@ -315,7 +317,7 @@ export function Campus() {
                     </div>
 
                     <UserStatsCampuses />
-                    <section className="flex items-center py-10 xl:h-screen font-poppins dark:bg-gray-800 ">
+                    <section className="flex items-center py-2 xl:h-screen font-poppins dark:bg-gray-800 ">
                         <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
                             <div className="flex flex-wrap ">
                                 <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
@@ -334,17 +336,13 @@ export function Campus() {
                                             className="absolute -top-20 left-0 text-[20px] lg:text-[100px] text-cyan-900 font-bold  dark:text-gray-200 opacity-5 md:block hidden">
                                             CARDPAY
                                         </h1>
-                                        <h1 className="pl-2 text-3xl font-bold border-l-8 border-purple-400 md:text-5xl dark:text-white">
-                                            Hear From Other Campuses/Society
+                                        <h1 className="pl-2 text-3xl font-bold border-l-8 border-cyan-400 md:text-5xl dark:text-white">
+                                        Hear from other clubs
                                         </h1>
                                     </div>
                                     <p className="mt-6 mb-10 text-base leading-7 text-gray-500 dark:text-gray-400">
-                                        In the bustling corridors of LUMS, a visionary group of students dreamed of a better way to pay. Fueled by innovation, they created CardPay—a digital payment solution for all. Even where banks were scarce, CardPay offered seamless transactions, replacing cumbersome cash with ease. It captured hearts and minds, transforming the university experience. Today, CardPay stands as a testament to youthful ingenuity, reshaping payments and offering a glimpse into a brighter, cashless future. Join the revolution and discover CardPay&apos;s boundless possibilities! 💳🎓🌟🚀
+                                        Have a listen to what student clubs like yours like about CardPay 💳🎓🌟🚀
                                     </p>
-                                    <a href="/"
-                                        className="px-4 py-3 text-gray-50 transition-all transform bg-cyan-400 rounded-[80px] hover:bg-cyan-500 dark:hover:text-gray-100 dark:text-gray-100 ">
-                                        Get the CardPay Experience Today! 💳📲
-                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -104,7 +104,8 @@ export  function SecondSection() {
                 <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                   <img
                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
+                    
+                    src="https://i.ibb.co/8N0SHCQ/cashlesscampus.png"
                     alt="Inbox user interface"
                   />
                 </div>
@@ -143,7 +144,7 @@ export  function SecondSection() {
                 <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
                   <img
                     className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
+                    src="https://i.ibb.co/1nJnmBW/Student.png"
                     alt="Customer profile user interface"
                   />
                 </div>
