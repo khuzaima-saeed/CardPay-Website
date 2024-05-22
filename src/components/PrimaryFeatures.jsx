@@ -17,12 +17,27 @@ import Image from 'next/image'
 
 const features = [
   {
-    name: 'POS Payments',
+    name: 'OTC POS Payments',
     description:
       'Experience unparalleled convenience with our mobile app\'s versatile transfer method. Seamlessly transfer funds, settle bills, and make purchases effortlessly. Explore a world of possibilities with event ticket purchases and access to a diverse range of restaurant partners. Transform everyday tasks into extraordinary experiences, all at your fingertips.',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
+  {
+    name: 'Events & Ticketing',
+    description:
+    'Unlock the potential of event ticekting with our versatile platform. From small businesses to large enterprises, we cater to a wide range of events, ensuring that each sector can benefit from our innovative tools and services. With a seemless and smooth ticketing process, get your hands on the best tickets the earliest and quickest. Ticketing is now just a click away!',
+    icon: DeviceTouchIcon,
+    screen: InvestScreen,
+  },
+  {
+    name: 'Personalised Debit Card',
+    description:
+      'Experience the convenience of a personalised debit card with our platform. Our app offers a range of customisation options, allowing you to create a card that reflects your personality. With a variety of designs and colours to choose from, you can create a card that is uniquely yours. Enjoy the convenience of a personalised debit card with our platform today!',
+    icon: DeviceTouchIcon,
+    screen: InvestScreen,
+  },
+  
   {
     name: 'Food Delivery',
     description:
@@ -31,12 +46,13 @@ const features = [
     screen: StocksScreen,
   },
   {
-    name: 'Events',
+    name: 'P2P Transfers',
     description:
-    'Unlock the potential of event ticekting with our versatile platform. From small businesses to large enterprises, we cater to a wide range of events, ensuring that each sector can benefit from our innovative tools and services. With a seemless and smooth ticketing process, get your hands on the best tickets the earliest and quickest. Ticketing is now just a click away!',
+      'Experience the convenience of peer-to-peer transfers with our platform. Our app offers a range of customisation options, allowing you to create a card that reflects your personality. With a variety of designs and colours to choose from, you can create a card that is uniquely yours. Enjoy the convenience of a personalised debit card with our platform today!',
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },
+
 ]
 
 function DeviceUserIcon(props) {
@@ -240,14 +256,14 @@ function FeaturesDesktop() {
                   {feature.name}
                 </Tab>
               </h3>
-              <p className="mt-2 text-sm text-gray-400">
+              <p className="mt-2 text-sm text-white">
                 {feature.description}
               </p>
             </div>
           </div>
         ))}
       </Tab.List>
-      <div className="relative col-span-6">
+      <div className="relative col-span-6 flex items-center justify-center">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#A020F0" className="animate-spin-slower" />
         </div>
@@ -376,21 +392,14 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for investing all your money"
-      className="bg-gray-900 py-10"
+      className="bg-gradient-to-b from-teal-500 to-cyan-600 py-4"
     >
-      <Container>
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-3xl">
-          <h2 className="text-3xl font-medium tracking-tight text-white">
-            Exclusive CardPay Features
-          </h2>
-        </div>
-      </Container>
 
-      <div className="mt-16 md:hidden">
+      <div className="md:hidden">
         <FeaturesMobile />
       </div>
 
-      <Container className="hidden md:mt-20 md:block">
+      <Container className="hidden md:mt-20 md:block mt-16">
         <FeaturesDesktop />
       </Container>
 

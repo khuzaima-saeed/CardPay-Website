@@ -171,7 +171,7 @@ const opts = {
 };
 
 const TierCard = ({ tier, tierIdx, isLast }) => (
-    <div className="flex justify-center items-center my-4" key={tier.id}>
+    <div className="flex justify-center items-center my-4">
         <div
             className={classNames(
                 tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-white/60 sm:mx-8 lg:mx-0',
@@ -290,7 +290,7 @@ export function Campus() {
                                    
                                         <div className="relative z-10">
                                             <p className="mt-6 text-3xl font-bold text-gray-900">
-                                                Create Your Campus Cash Free with CardPay's  <br />
+                                                Create Your Campus Cash Free with CardPay&apos;s
                                                 <span className={`text-gradient text-4xl transition-opacity ease-in duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === FeaturesList.length - 1 ? 'font-bold' : ''}`}>{FeaturesList[currentText]}</span>
                                             </p>
                                         </div>
@@ -332,7 +332,7 @@ export function Campus() {
                         </div>
                         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
                             {tiers.map((tier, tierIdx) => (
-                                <TierCard tier={tier} tierIdx={tierIdx} isLast={tierIdx === tiers.length - 1} />
+                                <TierCard tier={tier} tierIdx={tierIdx} isLast={tierIdx === tiers.length - 1} key={tier.id} />  
                             ))}
 
                         </div>

@@ -122,7 +122,7 @@ export  function SecondSection() {
                   </div>
                   <div className="mt-6">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-                      CardPay; Pakistani's First & Forever Mobile Wallet for Students
+                      CardPay; Pakistani&apos;s First & Forever Mobile Wallet for Students
                     </h2>
                     <p className="animate-bounce animate-thrice mt-4 text-lg text-gray-500">
                         We Provide unique features tailored to the needs of GenZ students for all their financial needs.<br/>

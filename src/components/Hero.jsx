@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import GooglePlayBadge from '@/images/google-play-badge.png'
 import AppleStoreIcon from '@/images/apple-store-icon.svg'
 import Link from 'next/link';
+import { TypeAnimation } from 'react-type-animation';
 
 
 function BackgroundIllustration(props) {
@@ -106,9 +107,26 @@ export function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl lg:text-4xl font-medium tracking-tight text-gray-900 font-medium text-center lg:text-left">
-              Revolutionising Finance For <span className={`text-gradient transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === text.length - 1 ? 'font-bold' : ''}`}>{text[currentText]}</span>
+              Revolutionising Finance For<br /> <span >
+                <TypeAnimation
+                  className={`text-gradient  ${currentText === text.length - 1 ? 'font-bold' : ''}`}
+                  sequence={[
+                    'GenZ',
+                    1000,
+                    'Students',
+                    1000,
+                    'Teens',
+                    1000,
+                    'YOU!',
+                    1000,
+                  ]}
+                  speed={50}
+                  style={{ fontSize: '1em' }}
+                  repeat={Infinity}
+                />
+              </span>
             </h1>
-            
+
             <p className="mt-6 text-lg text-gray-700 lg:w-3/4 text-center lg:text-left">
               The all in one ultimate payment solution for all your financial activity. Send, Recieve, budget, set goals and much more with CardPay.
             </p>
@@ -135,7 +153,7 @@ export function Hero() {
           </div>
         </div>
       </Container>
-      
+
     </div>
   );
 }
