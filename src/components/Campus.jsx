@@ -323,7 +323,7 @@ export function Campus() {
                                 <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
                                     <div className="relative">
                                         <div className="relative z-40 w-full lg:rounded-tr-[80px] lg:rounded-bl-[80px]  overflow-hidden">
-                                            <YouTube videoId="8tGGE1hKbpw" opts={opts} className='w-200 h-500' />
+                                            <YouTube videoId="7Hf7kAIdBv0" opts={opts} className='w-200 h-500' />
                                         </div>
                                         <div
                                             className="absolute z-10 hidden w-full h-full bg-cyan-400 rounded-bl-[80px] rounded -bottom-6 right-6 lg:block">
