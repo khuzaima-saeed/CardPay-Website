@@ -4,12 +4,6 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
-const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
-]
 
 export function Students() {
     const text = ["GenZ", "Students", "Teens", "YOU!"];
@@ -66,7 +60,7 @@ export function Students() {
                         </p>
                     </div>
                     <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-                        <svg viewBox="0 0 366 729" role="img" className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
+                        <svg viewBox="0 0 366 729" role="img" className="mx-auto w-[15.875rem] max-w-full drop-shadow-xl">
                             <title>App screenshot</title>
                             <defs>
                                 <clipPath id="2ade4387-9c63-4fc4-b754-10e687a0d332">
