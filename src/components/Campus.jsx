@@ -16,20 +16,30 @@ const tiers = [
         priceMonthly: '$19',
         description: "The perfect plan if you're just getting started with our product.",
         features: [{
-            name: 'Unlimited products',
-            icon: '🤩'
+            name: 'Cash change issues',
+            detail: 'Cash is king, but it is also a burden! It’s risky (theft), inconvenient (carrying it), and invisible (spending is hard to track). ',
+            // sad face
+            icon: '😥'
         },
         {
-            name: 'Unlimited subscribers',
-            icon: '🤩'
+            name: 'Hassle of managing societies',
+            detail: `Clubs are great, paperwork isn't! From approvals to finances, managing student groups takes time. We need a simpler system for student leaders & less admin stress for us!`,
+            icon: '🤯'
         },
         {
-            name: 'Basic analytics',
-            icon: '🤩'
+            name: 'Limited access to financial services',
+            detail: `Limited access to banking & credit building tools hinders budgeting, saving, & future planning. We need solutions!`,
+            icon: '😞'
         },
         {
-            name: 'Email support',
-            icon: '🤩'
+            name: 'Low financial awareness',
+            detail: `Financial literacy is a basic skill, lack of financial knowledge can leave you unprepared for the future.`,
+            icon: '😩'
+        },
+        {
+            name: 'Cash centric ecosystem',
+            detail: `Cash is king, but it is also a burden! It’s risky (theft), inconvenient (carrying it), and invisible (spending is hard to track).`,
+            icon: '😫'
         }
         ],
         featured: false,
@@ -42,20 +52,29 @@ const tiers = [
         description: 'Dedicated support and infrastructure for your company.',
         features: [
             {
-                name: 'Unlimited products',
+                name: 'QR based instant payments',
+                detail: 'Say goodbye to cash 👋 Make online and offline cashless payments on the go with CardPay',
                 icon: '🤩'
             },
             {
-                name: 'Unlimited subscribers',
-                icon: '🤩'
+                name: 'All-in-one solution',
+                detail: 'From events to ticketing, fee collection to fund raising, CardPay is the all-in-one solution for all your campus needs. Societies, clubs and event management is so much easier to manage with CardPay!',
+                icon: '😁'
             },
             {
-                name: 'Advanced analytics',
-                icon: '🤩'
+                name: 'Financial Freedom',
+                detail: 'With our banking-as-platform service, users have access to a range of lending, savings, insurance and investments products and services.',
+                icon: '🤑'
             },
             {
-                name: '24/7 support',
-                icon: '🤩'
+                name: 'Embedded Financial Literacy',
+                detail: 'We have creatively embedded financial literacy objectives into our CardPay app suited to the Gen Z student population. Learning is fun!',
+                icon: '🤠'
+            },
+            {
+                name: 'Data Insights',
+                detail: 'Get insights into student buying habits and profiles with our state of the art data and insights feature',
+                icon: '🥳'
             },
         ],
         featured: true,
@@ -78,13 +97,6 @@ const blogPosts = [
             'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
             'Create cashless instant QR payments with CardPay at all the eateires within your campus and outside!',
-        author: {
-            name: 'Roel Aufderehar',
-            imageUrl:
-                'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            href: '#',
-        },
-        readingLength: '6 min',
     },
     {
         id: 2,
@@ -96,14 +108,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'An all-in-one portal for all societies and clubs to publish their events offering greater traction, transparency and cashless ticketing.',
-        author: {
-            name: 'Brenna Goyette',
-            imageUrl:
-                'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            href: '#',
-        },
-        readingLength: '4 min',
+            'An all-in-one portal for all societies and clubs to publish their events offering greater traction, transparency and cashless ticketing.'
     },
     {
         id: 3,
@@ -115,14 +120,7 @@ const blogPosts = [
         imageUrl:
             'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
         preview:
-            'Say goodbye to your fees and fine collection hassle! CardPay provides a complete school management system to streamline your fees collection.',
-        author: {
-            name: 'Daniela Metz',
-            imageUrl:
-                'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            href: '#',
-        },
-        readingLength: '11 min',
+            'Say goodbye to your fees and fine collection hassle! CardPay provides a complete school management system to streamline your fees collection.'
     },
     {
         id: 4,
@@ -160,6 +158,7 @@ const blogPosts = [
         preview:
             'Equip your students with financial literacy program co-designed using the State Bank Financial Literacy program objectives embedded within the CardPay app.'
     },
+
 ]
 
 const opts = {
@@ -187,27 +186,12 @@ const TierCard = ({ tier, tierIdx, isLast }) => (
                 id={tier.id}
                 className={classNames(
                     tier.featured ? 'text-cyan-400' : 'text-cyan-600',
-                    'text-base font-semibold leading-7'
+                    'text-xl font-bold leading-7'
                 )}
             >
                 {tier.name}
             </h3>
-            <p className="mt-4 flex items-baseline gap-x-2">
-                <span
-                    className={classNames(
-                        tier.featured ? 'text-white' : 'text-gray-900',
-                        'text-5xl font-bold tracking-tight'
-                    )}
-                >
-                    {tier.priceMonthly}
-                </span>
-                <span className={classNames(tier.featured ? 'text-gray-400' : 'text-gray-500', 'text-base')}>
-                    /month
-                </span>
-            </p>
-            <p className={classNames(tier.featured ? 'text-gray-300' : 'text-gray-600', 'mt-6 text-base leading-7')}>
-                {tier.description}
-            </p>
+            
             <ul
                 role="list"
                 className={classNames(
@@ -224,22 +208,14 @@ const TierCard = ({ tier, tierIdx, isLast }) => (
                             aria-hidden="true"
                         >           {feature.icon}
                         </span>
-                        {feature.name}
+                        <span className={`${tier.featured ? 'text-cyan-300' : 'text-gray-900'} text-sm`}>
+                            {feature.name} <br/> <span className={`${tier.featured ? 'text-cyan-500' : 'text-gray-600'} text-sm`}>
+                        {feature.detail}</span>
+                        </span>
+                        
                     </li>
                 ))}
             </ul>
-            <a
-                href={tier.href}
-                aria-describedby={tier.id}
-                className={classNames(
-                    tier.featured
-                        ? 'bg-cyan-500 text-white shadow-sm hover:bg-cyan-400 focus-visible:outline-cyan-500'
-                        : 'text-cyan-600 ring-1 ring-inset ring-cyan-200 hover:ring-indigo-300 focus-visible:outline-cyan-600',
-                    'mt-8 block rounded-md py-2.5 px-3.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10'
-                )}
-            >
-                Get started today
-            </a>
         </div>
         {!isLast && (
             <div className="flex justify-center items-center mx-4">
