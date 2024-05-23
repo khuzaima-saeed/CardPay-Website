@@ -6,7 +6,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 
 export function Students() {
-    const text = ["GenZ", "Students", "Teens", "YOU!"];
+    const text = ["saving", "spending", "investing"];
     const [currentText, setCurrentText] = useState(0);
     const [fade, setFade] = useState(true);
 
@@ -16,8 +16,8 @@ export function Students() {
             setTimeout(() => {
                 setCurrentText((prev) => (prev + 1) % text.length);
                 setFade(true);
-            }, 500); // Match the duration of the fade-out animation
-        }, 2000);
+            }, 100); // Match the duration of the fade-out animation
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
@@ -52,16 +52,16 @@ export function Students() {
                 </svg>
                 <div className="mx-auto max-w-7xl px-6 py-2 sm:py-2 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-4">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-                        <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                            CardPay for <br/> <span className={`text-gradient transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === text.length - 1 ? 'font-bold' : ''}`}>{text[currentText]}</span>
+                        <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            CardPay YOUR first and forever mobile wallet for all your  <span className={`text-gradient transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'} ${currentText === text.length - 1 ? 'font-bold' : ''}`}>{text[currentText]}</span> needs.
                         </h1>
                         <p className="text-lg leading-8 text-gray-600">
-                            CardPay is a mobile application that allows students to manage their finances, track their spending, and make payments with ease.
+                            Empowering the youth with financial wellness and financial literacy.
                         </p>
                     </div>
                     <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
                         <svg viewBox="0 0 366 729" role="img" className="mx-auto w-[15.875rem] max-w-full drop-shadow-xl">
-                            <title>App screenshot</title>
+
                             <defs>
                                 <clipPath id="2ade4387-9c63-4fc4-b754-10e687a0d332">
                                     <rect width={316} height={684} rx={36} />

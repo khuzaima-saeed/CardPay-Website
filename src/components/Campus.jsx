@@ -36,11 +36,6 @@ const tiers = [
             name: 'Low financial awareness',
             detail: `Financial literacy is a basic skill, lack of financial knowledge can leave you unprepared for the future.`,
             icon: '😩'
-        },
-        {
-            name: 'Cash centric ecosystem',
-            detail: `Cash is king, but it is also a burden! It’s risky (theft), inconvenient (carrying it), and invisible (spending is hard to track).`,
-            icon: '😫'
         }
         ],
         featured: false,

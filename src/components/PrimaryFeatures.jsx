@@ -13,44 +13,48 @@ import { PhoneFrame } from '@/components/PhoneFrame'
 import MockUp from '@/images/cardpay.jpeg';
 import Food from '@/images/food.jpeg';
 import Events from '@/images/events.jpeg';
-import Image from 'next/image'
+import Image from 'next/image';
+import QR from '@/images/QR.jpg';
+import DD from '@/images/DD.jpg';
+import P2P from '@/images/P2P.jpg';
+
 
 const features = [
   {
-    name: 'OTC POS Payments',
+    name: 'QR Payments',
     description:
-      'Experience unparalleled convenience with our mobile app\'s versatile transfer method. Seamlessly transfer funds, settle bills, and make purchases effortlessly. Explore a world of possibilities with event ticket purchases and access to a diverse range of restaurant partners. Transform everyday tasks into extraordinary experiences, all at your fingertips.',
+      'Digital payments on the go for the digital generation. Just scan and pay at your favorite eateries on campus and outside',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: 'Events & Ticketing',
+    name: 'Customized debit cards',
     description:
-    'Unlock the potential of event ticekting with our versatile platform. From small businesses to large enterprises, we cater to a wide range of events, ensuring that each sector can benefit from our innovative tools and services. With a seemless and smooth ticketing process, get your hands on the best tickets the earliest and quickest. Ticketing is now just a click away!',
+      'Introducing customized debit cards for the first time in Pakistan! Get your personalized card now!',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    screen: Invest1Screen,
   },
   {
-    name: 'Personalised Debit Card',
+    name: 'Events and Ticketing',
     description:
-      'Experience the convenience of a personalised debit card with our platform. Our app offers a range of customisation options, allowing you to create a card that reflects your personality. With a variety of designs and colours to choose from, you can create a card that is uniquely yours. Enjoy the convenience of a personalised debit card with our platform today!',
+      'Keep a track of all the events happening at your campus and outside and pay instantly through your CardPay app!',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    screen: Invest2Screen,
   },
-  
+
   {
-    name: 'Food Delivery',
+    name: 'Deals & Discounts',
     description:
-      'Elevate your food-ordering game with our tailored solution. Say goodbye to complicated methods – our platform offers easy ordering and seamless payment solutions. List your restaurant with us and dive into a world of financial flexibility, where customization meets convenience. Showcase your products directly on our app to reach a broader audience and boost sales. Join us today and watch your business soar to new heights!',
+      'Avail CardPay exclusive discounts by ordering food through our food ordering feature. Its just like an internal foodpanda.',
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
     name: 'P2P Transfers',
     description:
-      'Experience the convenience of peer-to-peer transfers with our platform. Our app offers a range of customisation options, allowing you to create a card that reflects your personality. With a variety of designs and colours to choose from, you can create a card that is uniquely yours. Enjoy the convenience of a personalised debit card with our platform today!',
+      'Make instant transfers to your friends using their roll numbers or emails with our in-built chat feature. Transferring money was never that fun!',
     icon: DeviceTouchIcon,
-    screen: InvestScreen,
+    screen: Invest3Screen,
   },
 
 ]
@@ -182,7 +186,7 @@ const bodyAnimation = {
 function InviteScreen(props) {
   return (
     <AppScreen>
-      <Image src={MockUp} alt="" className='h-full w-full'/>
+      <Image src={QR} alt="" className='h-full w-full' />
     </AppScreen>
   )
 }
@@ -190,7 +194,7 @@ function InviteScreen(props) {
 function StocksScreen(props) {
   return (
     <AppScreen className="w-full">
-      <Image src={Food} alt="" className='h-full w-full'/>
+      <Image src={DD} alt="" className='h-full w-full' />
     </AppScreen>
   )
 }
@@ -198,11 +202,33 @@ function StocksScreen(props) {
 function InvestScreen(props) {
   return (
     <AppScreen className="w-full">
-      <Image src={Events} alt="" className='h-full w-full'/>
+      <Image src={Events} alt="" className='h-full w-full' />
     </AppScreen>
   )
 }
 
+function Invest1Screen(props) {
+  return (
+    <AppScreen className="w-full">
+      <Image src={MockUp} alt="" className='h-full w-full' />
+    </AppScreen>
+  )
+}
+
+function Invest2Screen(props) {
+  return (
+    <AppScreen className="w-full">
+      <Image src={Events} alt="" className='h-full w-full' />
+    </AppScreen>
+  )
+}
+function Invest3Screen(props) {
+  return (
+    <AppScreen className="w-full">
+      <Image src={P2P} alt="" className='h-full w-full' />
+    </AppScreen>
+  )
+}
 function usePrevious(value) {
   let ref = useRef()
 
@@ -249,8 +275,8 @@ function FeaturesDesktop() {
                 initial={{ borderRadius: 16 }}
               />
             )}
-            <div className="relative z-10 p-8">
-              <h3 className="mt-6 text-lg font-semibold text-white">
+            <div className="relative z-10 p-4">
+              <h3 className="mt-1 text-lg font-semibold text-white">
                 <Tab className="text-left ui-not-focus-visible:outline-none">
                   <span className="absolute inset-0 rounded-2xl" />
                   {feature.name}
@@ -395,7 +421,11 @@ export function PrimaryFeatures() {
       className="bg-gradient-to-b from-teal-500 to-cyan-600 py-4"
     >
 
+      <h1 className="text-3xl font-bold text-center text-white">
+      Go cash-free and enjoy a wide range of features tailored to your needs. 
+      </h1>
       <div className="md:hidden">
+
         <FeaturesMobile />
       </div>
 

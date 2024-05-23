@@ -7,6 +7,8 @@ import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 import qrCode from '@/images/qr-code.svg'
+import GooglePlayBadge from '@/images/google-play-badge.png'
+import AppleStoreIcon from '@/images/apple-store-icon.svg'
 
 function QrCodeBorder(props) {
   return (
@@ -37,16 +39,20 @@ export function Footer() {
               <NavLinks />
             </nav>
           </div>
-          <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
+          <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
             </div>
             <div className="ml-8 lg:w-64">
-              <p className="text-base font-semibold text-gray-900">
-                <Link href="/">
-                  <span className="absolute inset-0 sm:rounded-2xl" />
-                  Download the app
-                </Link>
-              </p>
+              <div className='flex justify-center lg:justify-start'>
+                <div className='flex justify-center items-center gap-x-4'>
+                  <Link href="https://apps.apple.com/pk/app/cardpay/id1644127078">
+                    <Image src={AppleStoreIcon} alt="Apple Store" />
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=io.payment.cardpay">
+                    <Image src={GooglePlayBadge} alt="Google Play" width={150} />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
