@@ -22,6 +22,7 @@
     "next": "^14.0.4",
     "next-video": "^0.14.2",
     "react": "^18.2.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
     "react-mobile-app-button": "^1.2.17",
     "react-player": "^2.14.1",
