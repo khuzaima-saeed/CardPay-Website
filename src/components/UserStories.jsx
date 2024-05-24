@@ -23,7 +23,10 @@ const UserStories = () => {
   
     return (
     <>
-    <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100 mt-6">User Stories</h1>
+    <h1 className="text-center text-4xl font-bold  mt-6">
+        {/* aedthetic line */}
+        Aj ke stars, kal ke legends! 🌟
+        </h1>
       <div className="fresnel-container fresnel-greaterThanOrEqual-lg">
         <div className="testimonial-container row">
             
